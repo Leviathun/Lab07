@@ -1,8 +1,5 @@
 name: deploy on push
-on: 
-  push:
-    branches:
-      - main
+on: push
 
 
 jobs:
@@ -14,10 +11,10 @@ jobs:
        - name: copy file to server
          uses: appleboy/scp-action@master
          with:
-           host: ${{secrets.HOST}}
+           host: ${{secrets.PROD_HOST}}
            username: ${{secrets.SSH_USER_NAME}}
            port: ${{secrets.SSH_PORT}}
-           key: ${{secrets.SSH_KEY}}
+           key: ${{secrets.SSH_KEY_2}}
            source: "./html/*"
            target: "/var/www/html"
-           strip_components: 1 #test  
+           strip_components: 1
