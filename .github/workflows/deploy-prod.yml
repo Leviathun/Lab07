@@ -14,7 +14,7 @@ jobs:
            host: ${{secrets.PROD_HOST}}
            username: ${{secrets.SSH_USER_NAME}}
            port: ${{secrets.SSH_PORT}}
-           key: ${{secrets.SSH_KEY_2}}
+           key: ${{secrets.SSH_KEY}}
            source: "./html/*"
            target: "/var/www/html"
            strip_components: 1
